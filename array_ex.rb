@@ -37,3 +37,16 @@ h.delete_if { |k, v| v < 3.5 }
 hash = {names: ['nick', 'dale', 'sarah', 'sam', 'lynne']}
 
 array_of_hashes = [{a:1}, {b:2}, {c:3}]
+
+arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']
+arr.select { |i|
+  if i.start_with?("s")
+    then i.delete!(arr.to_s)
+  else
+  end  }
+puts arr
+
+arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']
+
+arr.delete_if { |k| k.start_with?("s")}
+puts arr

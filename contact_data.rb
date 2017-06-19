@@ -17,11 +17,20 @@ sam_data = ['Tuck', 'Castro', 'Google']
 sam = ['Sam']
 sam_fields = [:pet, :city, :job]
 
-sam.each {|name, hash|
-sam_fields.shift {|fields|
-hash[fields] = sam_data.shift
-}}
+sam.each_with_index {|(name, hash), idx|
+  sam_fields.each { |field|
+    hash[field] = contact_data[idx].shift
+  }
+}
 
+
+#sam.each {|name, hash|
+#sam_fields.shift {|fields|
+#hash[fields] = sam_data.shift
+#}}
+
+
+=begin
 sarah_data = ['chickens', 'Bellingham', 'Hospital']
 sarah = ['Sarah']
 sarah_fields = [:pet, :city, :job]
